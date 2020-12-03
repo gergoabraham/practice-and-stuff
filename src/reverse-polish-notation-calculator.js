@@ -12,7 +12,7 @@ function reversePolishNotationCalculator(input) {
   }
 
   return input[0];
-};
+}
 
 function convertInputToArray(input) {
   return input.split(' ');
@@ -34,4 +34,4 @@ function removeOperands(input, operatorIndex) {
   input.splice(operatorIndex - 2, 2);
 }
 
-module.exports = {reversePolishNotationCalculator};
+module.exports = { reversePolishNotationCalculator };

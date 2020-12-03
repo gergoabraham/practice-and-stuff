@@ -2,6 +2,6 @@
 
 function sampleFunction(a, b) {
   return a + b;
-};
+}
 
-module.exports = {sampleFunction};
+module.exports = { sampleFunction };

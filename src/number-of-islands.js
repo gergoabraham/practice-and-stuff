@@ -12,11 +12,13 @@ function getNumberOfIslands(islandArray) {
   }
 
   return numberOfIslands;
-};
+}
 
 function isItANewIsland(islandIdArray, row, col) {
-  return isLand(islandIdArray, row, col) &&
-        !hasVisitedNeighbours(islandIdArray, col, row);
+  return (
+    isLand(islandIdArray, row, col) &&
+    !hasVisitedNeighbours(islandIdArray, col, row)
+  );
 }
 
 function isLand(islandIdArray, row, col) {
@@ -24,29 +26,34 @@ function isLand(islandIdArray, row, col) {
 }
 
 function hasVisitedNeighbours(islandIdArray, col, row) {
-  return (hasLeftNeighbour(col, islandIdArray, row) ||
-        hasUpperLeftNeighbour(col, row, islandIdArray) ||
-        hasUpperNeighbour(row, islandIdArray, col) ||
-        hasUpperRightNeighbour(col, row, islandIdArray));
+  return (
+    hasLeftNeighbour(col, islandIdArray, row) ||
+    hasUpperLeftNeighbour(col, row, islandIdArray) ||
+    hasUpperNeighbour(row, islandIdArray, col) ||
+    hasUpperRightNeighbour(col, row, islandIdArray)
+  );
 }
 
 function hasLeftNeighbour(col, islandIdArray, row) {
-  return (col > 0 && isLand(islandIdArray, row, col - 1));
+  return col > 0 && isLand(islandIdArray, row, col - 1);
 }
 
 function hasUpperLeftNeighbour(col, row, islandIdArray) {
-  return (col > 0 && row > 0 && isLand(islandIdArray, row - 1, col - 1));
+  return col > 0 && row > 0 && isLand(islandIdArray, row - 1, col - 1);
 }
 
 function hasUpperNeighbour(row, islandIdArray, col) {
-  return (row > 0 && isLand(islandIdArray, row - 1, col));
+  return row > 0 && isLand(islandIdArray, row - 1, col);
 }
 
 function hasUpperRightNeighbour(col, row, islandIdArray) {
   const numberOfColumns = islandIdArray[row].length;
 
-  return (col < (numberOfColumns - 1) && row > 0 &&
-     isLand(islandIdArray, row - 1, col + 1));
+  return (
+    col < numberOfColumns - 1 &&
+    row > 0 &&
+    isLand(islandIdArray, row - 1, col + 1)
+  );
 }
 
-module.exports = {getNumberOfIslands};
+module.exports = { getNumberOfIslands };

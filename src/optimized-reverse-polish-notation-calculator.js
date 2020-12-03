@@ -9,15 +9,14 @@ function reversePolishNotationCalculator(input) {
       const operator = element;
       const secondOperand = stack.pop();
       const firstOperand = stack.pop();
-      stack.push(
-          performOperation(firstOperand, operator, secondOperand));
+      stack.push(performOperation(firstOperand, operator, secondOperand));
     } else {
       stack.push(element);
     }
   });
 
   return stack.pop();
-};
+}
 
 function performOperation(firstOperand, operator, secondOperand) {
   return eval(firstOperand + operator + secondOperand);
@@ -31,4 +30,4 @@ function isOperator(item) {
   return '+-*/'.includes(item);
 }
 
-module.exports = {reversePolishNotationCalculator};
+module.exports = { reversePolishNotationCalculator };

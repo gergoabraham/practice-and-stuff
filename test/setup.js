@@ -1,6 +1,5 @@
 /* eslint-disable strict */
 
-
 'use strict';
 
 global.sinon = require('sinon');

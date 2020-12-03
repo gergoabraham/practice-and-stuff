@@ -1,10 +1,10 @@
 'use strict';
 
-const {getNumberOfIslands} = require('../src/number-of-islands');
+const { getNumberOfIslands } = require('../src/number-of-islands');
 
-describe('Number of Islands', function() {
-  context('no islands', function() {
-    it('should return 0 if no island is present', function() {
+describe('Number of Islands', function () {
+  context('no islands', function () {
+    it('should return 0 if no island is present', function () {
       getNumberOfIslands([
         [0, 0, 0, 0],
         [0, 0, 0, 0],
@@ -14,8 +14,8 @@ describe('Number of Islands', function() {
     });
   });
 
-  context('one sized islands', function() {
-    it('should find island on first cell', function() {
+  context('one sized islands', function () {
+    it('should find island on first cell', function () {
       getNumberOfIslands([
         [1, 0, 0, 0],
         [0, 0, 0, 0],
@@ -24,7 +24,7 @@ describe('Number of Islands', function() {
       ]).should.equal(1);
     });
 
-    it('should find two small islands', function() {
+    it('should find two small islands', function () {
       getNumberOfIslands([
         [1, 0, 0, 0],
         [0, 0, 0, 0],
@@ -33,7 +33,7 @@ describe('Number of Islands', function() {
       ]).should.equal(2);
     });
 
-    it('should find 4 small islands', function() {
+    it('should find 4 small islands', function () {
       getNumberOfIslands([
         [1, 0, 0, 0],
         [0, 0, 1, 0],
@@ -43,8 +43,8 @@ describe('Number of Islands', function() {
     });
   });
 
-  context('larger islands - recognizing neighbours', function() {
-    it('should recognize left neighbour', function() {
+  context('larger islands - recognizing neighbours', function () {
+    it('should recognize left neighbour', function () {
       getNumberOfIslands([
         [0, 0, 0, 0],
         [0, 0, 1, 1],
@@ -53,7 +53,7 @@ describe('Number of Islands', function() {
       ]).should.equal(1);
     });
 
-    it('should recognize left neighbour (two islands)', function() {
+    it('should recognize left neighbour (two islands)', function () {
       getNumberOfIslands([
         [0, 0, 0, 0],
         [0, 0, 1, 1],
@@ -62,7 +62,7 @@ describe('Number of Islands', function() {
       ]).should.equal(2);
     });
 
-    it('should recognize upper-left neighbour', function() {
+    it('should recognize upper-left neighbour', function () {
       getNumberOfIslands([
         [0, 1, 0, 0],
         [0, 0, 1, 0],
@@ -71,7 +71,7 @@ describe('Number of Islands', function() {
       ]).should.equal(1);
     });
 
-    it('should recognize upper neighbour', function() {
+    it('should recognize upper neighbour', function () {
       getNumberOfIslands([
         [0, 0, 1, 0],
         [0, 0, 1, 0],
@@ -80,7 +80,7 @@ describe('Number of Islands', function() {
       ]).should.equal(1);
     });
 
-    it('should recognize upper-right neighbour', function() {
+    it('should recognize upper-right neighbour', function () {
       getNumberOfIslands([
         [0, 0, 0, 0],
         [0, 0, 1, 0],
@@ -90,8 +90,8 @@ describe('Number of Islands', function() {
     });
   });
 
-  context('larger multiple islands', function() {
-    it('one larger islands', function() {
+  context('larger multiple islands', function () {
+    it('one larger islands', function () {
       getNumberOfIslands([
         [1, 1, 0, 0, 0, 0, 0],
         [1, 0, 1, 0, 0, 0, 0],
@@ -105,7 +105,7 @@ describe('Number of Islands', function() {
       ]).should.equal(1);
     });
 
-    it('two larger islands', function() {
+    it('two larger islands', function () {
       getNumberOfIslands([
         [1, 1, 0, 0, 0, 0, 0],
         [1, 0, 1, 0, 1, 0, 0],
@@ -119,7 +119,7 @@ describe('Number of Islands', function() {
       ]).should.equal(2);
     });
 
-    it('three larger islands', function() {
+    it('three larger islands', function () {
       getNumberOfIslands([
         [1, 1, 0, 0, 0, 0, 0],
         [1, 0, 1, 0, 1, 0, 0],
@@ -134,4 +134,3 @@ describe('Number of Islands', function() {
     });
   });
 });
-
